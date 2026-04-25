@@ -1,0 +1,193 @@
+/* ============================================================
+   IT Колледж: Pac-Session — базовый (дефолтный) вид
+   ============================================================ */
+
+* { box-sizing: border-box; }
+
+/* ----- Шрифт проекта -----
+   Используем единственный шрифт — Roboto (Google Fonts).
+   Все переменные ссылаются на него же, чтобы старые места в коде
+   продолжали работать без правок.
+*/
+:root {
+  --font-pixel:  'Roboto', sans-serif;
+  --font-mono:   'Roboto', sans-serif;
+  --font-arcade: 'Roboto', sans-serif;
+  --font-digits: 'Roboto', sans-serif;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: #000;
+  color: #ffffff;
+  font-family: var(--font-pixel);
+  overflow: hidden;
+  user-select: none;
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: unset;
+  font-smooth: never;
+  text-rendering: geometricPrecision;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px;
+}
+
+/* Заголовок */
+#title-bar {
+  display: none;
+  gap: 8px;
+  align-items: baseline;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+#title-bar .t1 {
+  font-family: var(--font-pixel);
+  font-size: 28px;
+  color: #ffeb3b;
+}
+#title-bar .t2 {
+  font-family: var(--font-pixel);
+  font-size: 14px;
+  color: #ffb8ff;
+  letter-spacing: 1px;
+}
+
+/* HUD */
+#hud {
+  display: none;
+  gap: 28px;
+  font-size: 20px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.hud-item {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+}
+.hud-item .label {
+  font-family: var(--font-pixel);
+  color: #ffcc00;
+  font-weight: 500;
+}
+.hud-item .value {
+  font-family: var(--font-pixel);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 18px;
+  min-width: 1ch;
+}
+/* «Этаж X/4» — более «шильдичный» вид, чтобы отличался от скоринга */
+.hud-item .value#floor {
+  font-family: var(--font-pixel);
+  color: #39ffe0;
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+
+/* Обёртка с канвасом */
+#game-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+canvas#game {
+  background: #000;
+  display: block;
+  image-rendering: pixelated;
+
+  /* Внутри канвас 448x496, но CSS растягивает его на весь экран.
+     Берём минимум из «по высоте экрана минус UI» и «по ширине экрана»,
+     чтобы сохранить пропорции 28:31. */
+  height: min(calc(100vh - 120px), calc((100vw - 20px) * 31 / 28));
+  width: auto;
+  aspect-ratio: 28 / 31;
+}
+
+/* Оверлей */
+#overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  background: rgba(0, 0, 0, 0.65);
+  color: #ffffff;
+  text-align: center;
+  padding: 16px;
+}
+#overlay.hidden { display: none; }
+
+#overlay h1 {
+  margin: 0;
+  font-family: var(--font-pixel);
+  font-size: 46px;
+  font-weight: 700;
+  color: #ffeb3b;
+  letter-spacing: 3px;
+}
+#overlay h2 {
+  margin: -4px 0 0;
+  font-family: var(--font-arcade);
+  font-size: 18px;
+  font-weight: 400;
+  color: #ffb8ff;
+  letter-spacing: 2px;
+}
+#overlay p {
+  margin: 0;
+  font-family: var(--font-pixel);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.55;
+  letter-spacing: 0.5px;
+  max-width: 560px;
+}
+#overlay p.small {
+  font-family: var(--font-mono);
+  font-size: 18px;
+  opacity: 0.9;
+}
+
+/* Кнопка */
+#overlay button {
+  margin-top: 10px;
+  background: #ffeb3b;
+  color: #000;
+  border: 2px solid #000;
+  font-family: var(--font-pixel);
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  padding: 12px 28px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: none;
+}
+#overlay button:hover {
+  background: #fff;
+}
+#overlay button:active {
+  background: #fff;
+}
+
+/* Подсказка внизу */
+#hint {
+  font-family: var(--font-mono);
+  font-size: 17px;
+  opacity: 0.75;
+  letter-spacing: 1px;
+}

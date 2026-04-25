@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>IT Колледж: Pac-Session</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!--
+  Единственный шрифт проекта: Roboto (Google Fonts),
+  полная поддержка кириллицы и латиницы во всех начертаниях.
+-->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles/main.css" />
+</head>
+<body>
+  <header id="title-bar">
+    <span class="t1">IT&nbsp;Колледж</span>
+    <span class="t2">: Pac-Session</span>
+  </header>
+
+  <section id="hud" role="status" aria-live="polite">
+    <div class="hud-item">
+      <span class="label">Знания</span>
+      <span class="value" id="score">0</span>
+    </div>
+    <div class="hud-item">
+      <span class="label">Рекорд</span>
+      <span class="value" id="high">0</span>
+    </div>
+    <div class="hud-item">
+      <span class="label">Пересдачи</span>
+      <span class="value" id="lives">3</span>
+    </div>
+    <div class="hud-item">
+      <span class="label">Этаж</span>
+      <span class="value" id="floor">1/4</span>
+    </div>
+    <div class="hud-item">
+      <span class="label">Время</span>
+      <span class="value" id="time">2:00</span>
+    </div>
+  </section>
+
+  <main id="game-wrap">
+    <canvas id="game" width="448" height="496" aria-label="Игровое поле"></canvas>
+
+    <div id="overlay" role="dialog" aria-modal="true">
+      <h1>IT Колледж</h1>
+      <h2>Pac-Session</h2>
+      <p class="lead">
+        Ты — студент. Собирай знания, хватай кофе — и преподы станут смирными.<br>
+        Если поймают — отчисление. Сдашь все знания — сессия закрыта.
+      </p>
+      <p class="small">Стрелки / WASD — идти · P — пауза · R — рестарт</p>
+      <button id="startBtn">На пару!</button>
+    </div>
+  </main>
+
+  <footer id="hint">
+    Arrows / WASD — идти · P — пауза · R — рестарт
+  </footer>
+
+  <script src="src/config.js"></script>
+  <script src="src/floors.js"></script>
+  <script src="src/maze.js"></script>
+  <script src="src/pacman.js"></script>
+  <script src="src/ghost.js"></script>
+  <script src="src/bonus.js"></script>
+  <script src="src/input.js"></script>
+  <script src="src/game.js"></script>
+  <script src="src/main.js"></script>
+</body>
+</html>
