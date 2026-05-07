@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pac-Man Mini Game</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main class="game-shell">
+    <h1>Pac-Man Mini</h1>
+    <p class="hint">
+      Управление: стрелки или WASD. <kbd>R</kbd> — новая игра.
+    </p>
+
+    <section class="hud" aria-label="Панель состояния">
+      <div>Счёт: <span id="score">0</span></div>
+      <div>Жизни: <span id="lives">3</span></div>
+      <div>Статус: <span id="status">Играем</span></div>
+    </section>
+
+    <canvas id="game" width="560" height="400" aria-label="Поле игры Pac-Man"></canvas>
+  </main>
+
+  <script src="./game.js"></script>
+</body>
+</html>
