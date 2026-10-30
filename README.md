@@ -1,47 +1,37 @@
 # Pac-Man Mini Game
 
-Легковесная браузерная мини-игра в стиле Pac-Man, которую можно запускать во время ожидания обработки задач.
+[English](README.md) · [Русский](README.ru.md)
 
-## Что есть в игре
+A lightweight browser mini-game in the style of Pac-Man, handy for keeping a user busy while a task is processing.
 
-- Плавное движение Pac-Man и призраков.
-- Управление с клавиатуры (стрелки и WASD).
-- Очки, жизни, победа и поражение.
-- Быстрый перезапуск игры без перезагрузки страницы.
-- Нулевые зависимости (чистые HTML/CSS/JavaScript).
+## Features
 
-## Управление
+- Smooth movement of Pac-Man and the ghosts
+- Keyboard controls (arrows and WASD)
+- Score, lives, win and lose states
+- Instant restart without reloading the page
+- No dependencies: plain HTML, CSS and JavaScript
 
-- `ArrowUp` / `W` — вверх
-- `ArrowDown` / `S` — вниз
-- `ArrowLeft` / `A` — влево
-- `ArrowRight` / `D` — вправо
-- `R` — новая игра
+## Controls
 
-## Запуск
+- `ArrowUp` / `W` — up
+- `ArrowDown` / `S` — down
+- `ArrowLeft` / `A` — left
+- `ArrowRight` / `D` — right
+- `R` — new game
 
-### Вариант 1: просто открыть файл
+## Getting Started
 
-Откройте `index.html` в браузере.
-
-### Вариант 2: через локальный сервер (рекомендуется)
-
-Если установлен Python:
+Open `index.html` in a browser, or serve the folder with a local server (recommended):
 
 ```bash
 python3 -m http.server 8080
 ```
 
-Затем откройте:
+Then open <http://localhost:8080>.
 
-`http://localhost:8080`
+## Project Structure
 
-## Структура проекта
-
-- `index.html` — разметка игры и HUD.
-- `styles.css` — стили интерфейса и игрового поля.
-- `game.js` — логика игры, AI призраков, рендер и игровой цикл.
-
-## Идея интеграции
-
-Игру удобно показывать на экране ожидания результатов как мини-активность для пользователя.
+- `index.html` — game markup and HUD
+- `styles.css` — interface and board styles
+- `game.js` — game logic, ghost AI, rendering and the game loop
